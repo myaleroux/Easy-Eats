@@ -3,92 +3,159 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>YourStartup</title>
-  <meta name="description" content="A student startup prototype for BSAD 281.">
-  <link rel="stylesheet" href="styles.css">
+  <title>Easy Eats</title>
+  <meta name="description" content="Affordable recipes and grocery planning for everyday life.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- =========================================================
-       HEADER: logo text + navigation.
-       Each link points to a "view" further down the page (#home, #explore, #about).
-       ========================================================= -->
   <header class="site-header">
-    <a class="brand" href="#home" id="brand-name">YourStartup</a>
-    <nav aria-label="Main">
-      <a href="#home">Home</a>
-      <a href="#explore">Explore</a>
-      <a href="#about">About</a>
+    <a class="brand" href="#home" aria-label="Easy Eats home"><span class="brand-mark">E</span><span>Easy Eats</span></a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#recipes">Weekly Recipes</a><a href="#saved">Saved Recipes</a><a href="#groceries">Grocery Planner</a>
+      <a href="#kitchen">My Kitchen</a><a href="#swaps">Swap Chat</a><a href="#pantry">My Pantry</a><a href="#learn">Learn</a><a href="#about">About</a>
     </nav>
   </header>
-
   <main>
-
-    <!-- =======================================================
-         VIEW 1: HOME — what you do, for whom, and why it matters.
-         ======================================================= -->
     <section id="home" data-view>
       <div class="hero">
-        <p class="eyebrow">Prototype</p>
-        <h1 id="tagline">One sentence that says what your startup does.</h1>
-        <p class="lead" id="pitch">
-          Who is your customer, what problem do they have, and why is your
-          solution better than what they use today?
-        </p>
-        <a class="button" href="#explore">See it in action</a>
+        <div class="hero-copy">
+          <p class="eyebrow">Easy Eats · Easy Saving</p>
+          <h1>Cook cheaper. Waste less. Learn as you go.</h1>
+          <p class="hero-lead">Plan affordable dinners, stretch every grocery, and learn simple kitchen skills with an easy, friendly recipe book made for your budget.</p>
+          <div class="hero-actions">
+            <a class="button" href="#recipes">See this week's recipes</a>
+            <a class="button secondary" href="#groceries">Plan my groceries</a>
+            <a class="button accent" href="#swaps">Ask for a swap</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Healthy food illustration">
+          <div class="plate">🥗</div><span class="price-pill">$2.35 / serving</span><span class="waste-pill">Less waste ♻</span>
+        </div>
       </div>
+      <div class="feature-row">
+        <article><span>9</span><p>Budget-friendly recipes</p></article>
+        <article><span>14</span><p>Days of dinner planning</p></article>
+        <article><span>25+</span><p>Kitchen ingredient swaps</p></article>
+      </div>
+    </section>
 
-      <div class="steps">
-        <div class="card">
-          <h2>1. Step one</h2>
-          <p>Describe the first thing a customer does.</p>
+    <section id="recipes" data-view hidden>
+      <div class="section-heading">
+        <div><p class="eyebrow">This week</p><h1>Weekly Recipes</h1></div>
+        <div class="heading-controls">
+          <label class="household-control">Household size
+            <select id="household-size"><option value="1">1 person</option><option value="2">2 people</option><option value="3">3 people</option><option value="4">4 people</option><option value="5">5 people</option></select>
+          </label>
+          <label class="unit-control">Measurements
+            <select id="unit-system"><option value="metric">Metric (g, mL)</option><option value="imperial">Imperial (oz, cups)</option></select>
+          </label>
         </div>
-        <div class="card">
-          <h2>2. Step two</h2>
-          <p>Describe what happens next.</p>
+      </div>
+      <div class="filter-row" id="recipe-filters" aria-label="Recipe filters"></div>
+      <div class="recipe-toolbar"><p class="muted" id="weekly-status">Your current weekly selections</p><button class="button secondary" id="refresh-meals" type="button">Refresh all meals</button></div>
+      <div class="recipe-grid" id="recipe-grid"></div>
+    </section>
+
+    <section id="saved" data-view hidden>
+      <div class="section-heading"><div><p class="eyebrow">Make them again</p><h1>Saved Recipes</h1></div></div>
+      <div class="recipe-grid" id="saved-recipe-grid"></div>
+    </section>
+
+    <section id="kitchen" data-view hidden>
+      <div class="section-heading"><div><p class="eyebrow">Your setup</p><h1>My Kitchen</h1></div></div>
+      <div class="kitchen-layout">
+        <div class="panel">
+          <h2>Appliances I have</h2>
+          <p class="muted">Select what you can use. Recipe steps will be adjusted to match your kitchen.</p>
+          <div class="kitchen-grid" id="kitchen-appliances"></div>
         </div>
-        <div class="card">
-          <h2>3. Step three</h2>
-          <p>Describe the result the customer gets.</p>
+        <div class="panel">
+          <h2>Common tools</h2>
+          <p class="muted">Useful pots, pans, and utensils for these recipes.</p>
+          <div class="tools-grid" id="common-tools"></div>
         </div>
       </div>
     </section>
 
-    <!-- =======================================================
-         VIEW 2: EXPLORE — a list built from the fake data in data.js.
-         ======================================================= -->
-    <section id="explore" data-view hidden>
-      <h1>Explore</h1>
-      <p class="muted">These examples are fake. They come from <code>data.js</code>.</p>
-
-      <label class="search">
-        <span>Search</span>
-        <input type="search" id="search-box" placeholder="Type to filter…">
-      </label>
-
-      <p class="muted" id="saved-count"></p>
-      <div class="grid" id="listing-grid"></div>
-      <p class="empty" id="empty-message" hidden>Nothing matches your search.</p>
+    <section id="groceries" data-view hidden>
+      <div class="section-heading"><div><p class="eyebrow">Stretch your dollars</p><h1>Grocery Planner</h1></div></div>
+      <div class="planner-controls">
+        <fieldset><legend>Two-week budget</legend><div class="chip-row" id="budget-options"></div></fieldset>
+        <label>My store<select id="store-select"><option value="">Choose a store</option></select></label>
+      </div>
+      <div class="nearby-stores panel">
+        <div class="nearby-heading"><div><h2>Find a store nearby</h2><p class="muted">Use your location or enter a city/postal code to open nearby store results.</p></div><button class="button secondary" id="use-location" type="button">Use my location</button></div>
+        <form class="location-form" id="location-form">
+          <label class="sr-only" for="location-input">City or postal code</label>
+          <input id="location-input" type="text" placeholder="Toronto, ON or M5V 2T6">
+          <button class="button" type="submit">Find stores</button>
+        </form>
+        <p class="location-status muted" id="location-status" aria-live="polite"></p>
+        <div class="store-map-links" id="store-map-links"></div>
+      </div>
+      <div id="planner-output"><div class="planner-empty"><span>🛒</span><h2>Choose a budget and store</h2><p>We'll build a 14-day dinner plan and an easy grocery list.</p></div></div>
     </section>
 
-    <!-- =======================================================
-         VIEW 3: ABOUT — your team and your story.
-         ======================================================= -->
+    <section id="swaps" data-view hidden>
+      <div class="section-heading"><div><p class="eyebrow">Ask the kitchen helper</p><h1>Swap Chat</h1></div></div>
+      <div class="chat-layout">
+        <div class="chat-window" id="chat-window" aria-live="polite"><div class="message bot">Hi! Tell me an ingredient you need to replace, and I'll suggest a budget-friendly swap.</div></div>
+        <div class="suggestion-row" id="suggestion-row"></div>
+        <form class="chat-form" id="chat-form">
+          <label class="sr-only" for="chat-input">Type an ingredient swap question</label>
+          <input id="chat-input" type="text" placeholder="What can I use instead of eggs?" autocomplete="off">
+          <button class="button" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="pantry" data-view hidden>
+      <div class="section-heading">
+        <div><p class="eyebrow">Already at home</p><h1>My Pantry</h1></div>
+      </div>
+      <div class="pantry-page">
+        <div class="panel">
+          <h2>Common pantry items</h2>
+          <p class="muted">Tick the items you already have. They will be removed from your grocery list.</p>
+          <div class="pantry-list" id="pantry-presets"></div>
+        </div>
+        <div class="panel">
+          <h2>Add your own items</h2>
+          <p class="muted">Type any ingredient or staple you already have.</p>
+          <form class="pantry-form" id="pantry-form">
+            <label class="sr-only" for="pantry-input">Pantry item</label>
+            <input id="pantry-input" type="text" placeholder="For example, oats or hot sauce" autocomplete="off">
+            <button class="button" type="submit">Add</button>
+          </form>
+          <div class="custom-pantry-list" id="custom-pantry-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="learn" data-view hidden>
+      <div class="section-heading"><div><p class="eyebrow">Build confidence</p><h1>Learn</h1></div></div>
+      <div class="skills-tracker" id="skills-tracker"></div>
+      <div class="skills-grid" id="skills-grid"></div>
+    </section>
+
     <section id="about" data-view hidden>
-      <h1>About us</h1>
-      <p>Tell the story of why your team started this company.</p>
-      <p>Use first names only, or no names at all — this site is public.</p>
+      <div class="about-card">
+        <p class="eyebrow">About Easy Eats</p>
+        <h1>Made for anyone who wants easier meals and easier saving.</h1>
+        <p>Easy Eats helps people choose affordable meals, plan groceries, avoid waste, and learn practical cooking skills with fewer resources and less stress.</p>
+        <div class="demo-note"><strong>Demo note:</strong> Store prices and deals on this site are sample Canadian data for demonstration purposes only.</div>
+      </div>
     </section>
-
   </main>
-
-  <!-- Keep this footer. Your site must say it is a student project. -->
-  <footer class="site-footer">
-    <p>Student prototype for BSAD 281 at St. Francis Xavier University. Not a real company — all data is fictional.</p>
-  </footer>
-
-  <!-- Scripts load in this order: data first, then the code that uses it. -->
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+  <footer class="site-footer"><p>Easy Eats · An everyday budgeting and recipe prototype</p></footer>
+  <dialog id="recipe-dialog" class="recipe-dialog">
+    <button class="dialog-close" type="button" id="dialog-close" aria-label="Close recipe details">×</button>
+    <div id="recipe-detail"></div>
+  </dialog>
+  <script src="data.js"></script><script src="app.js"></script>
 </body>
 </html>

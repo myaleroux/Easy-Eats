@@ -1,26 +1,87 @@
-// ============================================================
-// data.js — ALL the fake data for your prototype lives here.
-//
-// There is no database. Everything below is made up, and that is
-// on purpose: never put real people's names, emails, phone numbers
-// or addresses in this file.
-//
-// To change what appears on the Explore page, edit LISTINGS.
-// Each item is one card. Keep the same fields (id, name, category,
-// description) or ask Copilot to add new ones everywhere they're needed.
-// ============================================================
+// All sample content for Easy Eats lives here.
+const RECIPES = [
+  {id:"lentil-pasta",name:"Lentil Tomato Pasta",emoji:"🍝",time:25,cost:2.10,calories:480,tags:["Vegetarian","High-protein","Halal"],appliances:["Stove","Pot","Saucepan","Colander"],tools:["Large pot","Small saucepan","Colander","Wooden spoon","Chef's knife"],ingredients:[{name:"Pasta",amount:90,unit:"g",priceUnit:"kg",price:3.49},{name:"Brown lentils",amount:80,unit:"g",priceUnit:"can",price:1.49},{name:"Tomato sauce",amount:120,unit:"ml",priceUnit:"jar",price:2.29},{name:"Onion",amount:.25,unit:"",priceUnit:"each",price:.89},{name:"Garlic",amount:1,unit:"clove",priceUnit:"bulb",price:.99}],steps:["Bring a large pot of salted water to a high boil over high heat; cook pasta for 9–11 minutes, until al dente.","Medium-low, saucepan: add 1 teaspoon oil, diced onion, and garlic. Cook for 3–4 minutes until softened.","Medium-low, saucepan: add lentils and tomato sauce. Simmer uncovered for 8 minutes.","Drain pasta with a colander, keeping ¼ cup water. Toss pasta and sauce together for 1–2 minutes; season to taste."]},
+  {id:"bean-tacos",name:"Black Bean Tacos",emoji:"🌮",time:20,cost:2.45,calories:510,tags:["Vegetarian","Halal"],appliances:["Stove","Pan","Saucepan"],tools:["Frying pan","Saucepan","Cutting board","Chef's knife","Grater"],ingredients:[{name:"Small tortillas",amount:3,unit:"",priceUnit:"pack",price:3.49},{name:"Black beans",amount:120,unit:"g",priceUnit:"can",price:1.29},{name:"Cheddar",amount:30,unit:"g",priceUnit:"kg",price:12.49},{name:"Cabbage",amount:80,unit:"g",priceUnit:"kg",price:2.49},{name:"Lime",amount:.25,unit:"",priceUnit:"each",price:.79}],steps:["Medium-low, saucepan: warm drained beans with 2 tablespoons water and spices for 5–7 minutes; mash lightly.","Finely shred cabbage and toss with lime juice and a pinch of salt for 2 minutes.","Medium-low, dry pan: warm each tortilla for 30–45 seconds per side.","Fill tortillas with beans, cabbage, and grated cheddar. Serve immediately."]},
+  {id:"chickpea-curry",name:"Easy Chickpea Curry",emoji:"🍛",time:30,cost:2.85,calories:530,tags:["Vegan","Vegetarian","Halal"],appliances:["Stove","Saucepan","Pot"],tools:["Saucepan","Large pot","Rice spoon","Colander","Can opener"],ingredients:[{name:"Chickpeas",amount:150,unit:"g",priceUnit:"can",price:1.39},{name:"Coconut milk",amount:100,unit:"ml",priceUnit:"can",price:2.29},{name:"Rice",amount:75,unit:"g",priceUnit:"kg",price:4.49},{name:"Frozen peas",amount:50,unit:"g",priceUnit:"bag",price:3.29},{name:"Curry powder",amount:8,unit:"g",priceUnit:"jar",price:3.99}],steps:["Bring rice and water to a boil in a covered pot, then reduce to low and simmer 12–15 minutes. Turn off heat and rest 5 minutes.","Medium-low, saucepan: warm coconut milk and curry powder for 1–2 minutes, stirring.","Add chickpeas and peas. Simmer gently for 8–10 minutes, stirring occasionally.","Fluff rice with a fork and spoon curry over it."]},
+  {id:"chicken-bowl",name:"Chicken Rice Bowl",emoji:"🍚",time:35,cost:4.80,calories:610,tags:["High-protein","Halal"],appliances:["Stove","Pot","Pan"],tools:["Large pot","Frying pan","Cutting board","Chef's knife","Tongs"],ingredients:[{name:"Chicken thighs",amount:180,unit:"g",priceUnit:"kg",price:7.99},{name:"Rice",amount:75,unit:"g",priceUnit:"kg",price:4.49},{name:"Frozen broccoli",amount:100,unit:"g",priceUnit:"bag",price:3.49},{name:"Soy sauce",amount:15,unit:"ml",priceUnit:"bottle",price:3.29},{name:"Garlic",amount:1,unit:"clove",priceUnit:"bulb",price:.99}],steps:["Cook rice in a covered pot according to package directions, about 12–15 minutes. Steam or microwave broccoli until hot.","Cut chicken into evenly sized 2 cm pieces on a clean cutting board.","Medium-high, pan: cook chicken for 10–12 minutes, turning, until browned and the centre reaches 74°C/165°F.","Add soy sauce and garlic for the last minute. Serve chicken and broccoli over rice."]},
+  {id:"egg-skillet",name:"Spinach Egg Skillet",emoji:"🍳",time:15,cost:2.65,calories:390,tags:["High-protein","Halal","Vegetarian"],appliances:["Stove","Pan","Pot"],tools:["Frying pan","Small pot","Cutting board","Chef's knife","Lid"],ingredients:[{name:"Eggs",amount:2,unit:"",priceUnit:"dozen",price:4.49},{name:"Spinach",amount:80,unit:"g",priceUnit:"bag",price:3.49},{name:"Potatoes",amount:180,unit:"g",priceUnit:"kg",price:3.29},{name:"Cheddar",amount:20,unit:"g",priceUnit:"kg",price:12.49},{name:"Oil",amount:10,unit:"ml",priceUnit:"bottle",price:6.49}],steps:["Dice potatoes into 1 cm cubes. Boil in a small pot for 4–5 minutes, then drain.","Medium, pan: heat oil and cook potatoes for 5–6 minutes, turning until golden.","Add spinach and cook for 1 minute. Make two wells, crack in eggs, and add cheddar.","Cover and cook on low for 3–5 minutes, until egg whites are set."]},
+  {id:"tofu-stirfry",name:"Tofu Veggie Stir-fry",emoji:"🥢",time:25,cost:3.75,calories:460,tags:["Vegan","Vegetarian","High-protein","Halal"],appliances:["Stove","Pan","Pot"],tools:["Large frying pan","Pot","Cutting board","Chef's knife","Spatula"],ingredients:[{name:"Firm tofu",amount:150,unit:"g",priceUnit:"pack",price:3.49},{name:"Mixed vegetables",amount:180,unit:"g",priceUnit:"bag",price:4.29},{name:"Rice",amount:70,unit:"g",priceUnit:"kg",price:4.49},{name:"Soy sauce",amount:20,unit:"ml",priceUnit:"bottle",price:3.29},{name:"Oil",amount:10,unit:"ml",priceUnit:"bottle",price:6.49}],steps:["Press tofu with a clean towel, then cut into 2 cm cubes.","Cook rice in a covered pot for 12–15 minutes; rest 5 minutes off the heat.","Medium-high, pan: heat oil and sear tofu for 6–8 minutes, turning to brown all sides.","Add vegetables and stir-fry 4–5 minutes. Add soy sauce and serve over rice."]},
+  {id:"tuna-wrap",name:"Tuna Sweetcorn Wrap",emoji:"🌯",time:10,cost:3.20,calories:420,tags:["High-protein","Halal"],appliances:["Stove","Pan","Microwave"],tools:["Frying pan","Mixing bowl","Can opener","Colander","Knife"],ingredients:[{name:"Canned tuna",amount:.4,unit:"can",priceUnit:"can",price:2.49},{name:"Small tortillas",amount:2,unit:"",priceUnit:"pack",price:3.49},{name:"Corn",amount:60,unit:"g",priceUnit:"can",price:1.49},{name:"Yogurt",amount:30,unit:"g",priceUnit:"tub",price:4.49},{name:"Cabbage",amount:50,unit:"g",priceUnit:"kg",price:2.49}],steps:["Drain tuna and corn thoroughly in a colander.","Mix tuna, corn, yogurt, and a pinch of pepper in a bowl for 1 minute.","Warm tortillas in a dry pan on medium-low for 30 seconds per side, or microwave for 10–15 seconds.","Divide filling down the centre and add shredded cabbage. Roll tightly."]},
+  {id:"fried-rice",name:"Vegetable Fried Rice",emoji:"🍲",time:22,cost:2.95,calories:450,tags:["Vegan","Vegetarian","Halal"],appliances:["Stove","Pot","Pan"],tools:["Saucepan","Large frying pan","Rice spoon","Knife","Cutting board"],ingredients:[{name:"Rice",amount:100,unit:"g",priceUnit:"kg",price:4.49},{name:"Frozen peas",amount:60,unit:"g",priceUnit:"bag",price:3.29},{name:"Carrot",amount:.5,unit:"",priceUnit:"kg",price:2.29},{name:"Soy sauce",amount:15,unit:"ml",priceUnit:"bottle",price:3.29},{name:"Oil",amount:10,unit:"ml",priceUnit:"bottle",price:6.49}],steps:["Cook rice in a covered pot, then spread it on a plate and cool for 5 minutes.","Finely dice the carrot; medium-high, pan: cook in oil for 3–4 minutes.","Add rice and peas. Fry on medium-high for 5–7 minutes, stirring every 30 seconds.","Add soy sauce and stir-fry for 1 minute until hot."]},
+  {id:"lentil-soup",name:"Potato Lentil Soup",emoji:"🥣",time:40,cost:2.20,calories:410,tags:["Vegan","Vegetarian","Halal"],appliances:["Stove","Saucepan","Pot"],tools:["Large saucepan","Cutting board","Chef's knife","Wooden spoon","Ladle"],ingredients:[{name:"Red lentils",amount:90,unit:"g",priceUnit:"bag",price:3.49},{name:"Potatoes",amount:200,unit:"g",priceUnit:"kg",price:3.29},{name:"Carrot",amount:.5,unit:"",priceUnit:"kg",price:2.29},{name:"Onion",amount:.25,unit:"",priceUnit:"each",price:.89},{name:"Stock cube",amount:1,unit:"",priceUnit:"pack",price:2.49}],steps:["Dice onion, carrot, and potatoes into 1–2 cm pieces.","Medium-low, saucepan: cook vegetables in 1 tablespoon oil for 5 minutes, stirring.","Add lentils, stock, and 750 mL water. Bring to a boil over high heat.","Reduce to low and simmer partially covered for 25–30 minutes. Mash a few spoonfuls for a thicker soup."]}
+];
 
-const STARTUP = {
-  name: "YourStartup",
-  tagline: "One sentence that says what your startup does.",
-  pitch: "Who is your customer, what problem do they have, and why is your solution better than what they use today?"
+const KITCHEN_APPLIANCES = ["Stove","Oven","Microwave","Air fryer","Pan","Pot","Saucepan","Slow cooker"];
+const COMMON_TOOLS = ["Large pot","Saucepan","Frying pan","Baking tray","Colander","Cutting board","Chef's knife","Wooden spoon","Tongs","Mixing bowl","Ladle","Grater"];
+
+const STORES = ["FreshCo","Sobeys","Walmart","RealAtlanticSuperstore","Costco"];
+const STORE_NAMES = {
+  FreshCo:"FreshCo",
+  Sobeys:"Sobeys",
+  Walmart:"Walmart",
+  RealAtlanticSuperstore:"Real Atlantic Superstore",
+  Costco:"Costco"
 };
-
-const LISTINGS = [
-  { id: 1, name: "Sample listing A", category: "Category 1", description: "A short description of this item." },
-  { id: 2, name: "Sample listing B", category: "Category 2", description: "A short description of this item." },
-  { id: 3, name: "Sample listing C", category: "Category 1", description: "A short description of this item." },
-  { id: 4, name: "Sample listing D", category: "Category 3", description: "A short description of this item." },
-  { id: 5, name: "Sample listing E", category: "Category 2", description: "A short description of this item." },
-  { id: 6, name: "Sample listing F", category: "Category 3", description: "A short description of this item." }
+const STORE_MULTIPLIERS = {
+  FreshCo:{FreshCo:1,Sobeys:1.07,Walmart:.96,RealAtlanticSuperstore:1.02,Costco:.91},
+  Sobeys:{FreshCo:.98,Sobeys:1,Walmart:.95,RealAtlanticSuperstore:1.01,Costco:.90},
+  Walmart:{FreshCo:1.01,Sobeys:1.06,Walmart:1,RealAtlanticSuperstore:1.03,Costco:.92},
+  RealAtlanticSuperstore:{FreshCo:.98,Sobeys:1.02,Walmart:.97,RealAtlanticSuperstore:1,Costco:.89},
+  Costco:{FreshCo:1.08,Sobeys:1.12,Walmart:1.08,RealAtlanticSuperstore:1.1,Costco:1}
+};
+const STORE_MAP_SEARCHES = {
+  FreshCo:"FreshCo grocery store",
+  Sobeys:"Sobeys grocery store",
+  Walmart:"Walmart grocery store",
+  RealAtlanticSuperstore:"Real Atlantic Superstore grocery store",
+  Costco:"Costco warehouse"
+};
+const STORE_PRICE_FACTORS = {FreshCo:1,Sobeys:1.04,Walmart:.94,RealAtlanticSuperstore:1.02,Costco:.88};
+const DEALS = {
+  FreshCo:["Chicken thighs: $5.99/kg, 25% off","Rice: 2 kg for $6.49","Canned beans: 3 for $4.00","Frozen vegetables: $3.49/bag","Eggs: $4.29/dozen"],
+  Sobeys:["Chicken thighs: $6.49/kg, 20% off","Tomatoes: $2.49/lb","Canned beans: 2 for $3.00","Fresh spinach: $3.99/bag","Pasta: $1.79/box"],
+  Walmart:["Chicken thighs: $5.79/kg, rollback","Rice: 2 kg for $5.97","Canned beans: $0.97 each","Mixed vegetables: $3.97/bag","Eggs: $4.17/dozen"],
+  RealAtlanticSuperstore:["Chicken thighs: $6.99/kg, PC Optimum offer","Rice: 2 kg for $6.99","Canned beans: 3 for $4.50","Frozen vegetables: $3.99/bag","Eggs: $4.49/dozen"],
+  Costco:["Chicken thighs: $18.99/2.5 kg pack","Rice: 8 kg for $19.99","Canned beans: 8-pack for $9.99","Frozen vegetables: $10.99/2 kg","Eggs: $14.99/24-pack"]
+};
+const PANTRY_ITEMS = ["Salt","Pepper","Oil","Flour","Sugar","Soy sauce","Garlic","Rice"];
+const SWAPS = [
+  {keywords:["sugar","sweetener"],swap:"Honey or maple syrup",ratio:"Use 3/4 cup honey or maple syrup for every 1 cup sugar",tip:"Reduce other liquid by about 1/4 cup.",allergens:[]},
+  {keywords:["egg","eggs"],swap:"Flax egg or mashed banana",ratio:"1 flax egg = 1 tbsp ground flax + 3 tbsp water; 1/2 banana replaces 1 egg",tip:"Flax works in baking; banana adds sweetness.",allergens:["eggs"]},
+  {keywords:["butter"],swap:"Oil",ratio:"Use 3/4 cup oil for 1 cup butter",tip:"Use neutral oil for a close texture.",allergens:["dairy"]},
+  {keywords:["milk","dairy-free"],swap:"Oat milk or soy milk",ratio:"Use a 1:1 replacement",tip:"Choose unsweetened oat milk for savoury dishes.",allergens:["dairy","soy"]},
+  {keywords:["buttermilk"],swap:"Milk plus lemon juice or vinegar",ratio:"Add 1 tbsp lemon juice or vinegar to 1 cup milk; rest 5 minutes",tip:"This gives tang and thickness.",allergens:["dairy"]},
+  {keywords:["heavy cream","cream"],swap:"Evaporated milk or milk plus butter",ratio:"Use 1:1 evaporated milk; or 3/4 cup milk + 1/4 cup melted butter",tip:"Good for cooking, not whipping.",allergens:["dairy"]},
+  {keywords:["sour cream"],swap:"Plain yogurt",ratio:"Use 1:1",tip:"Greek or regular plain yogurt both work.",allergens:["dairy"]},
+  {keywords:["yogurt"],swap:"Silken tofu or plant yogurt",ratio:"Use 1:1",tip:"Blend silken tofu smoothly first.",allergens:["soy"]},
+  {keywords:["cheese"],swap:"Nutritional yeast or shredded tofu",ratio:"Use 2 tbsp nutritional yeast for 1/4 cup cheese",tip:"It adds a savoury flavour.",allergens:["soy"]},
+  {keywords:["flour","white flour"],swap:"Whole wheat flour",ratio:"Start with 1:1 and add liquid if needed",tip:"Use half whole wheat for a lighter result.",allergens:["gluten"]},
+  {keywords:["wheat","gluten"],swap:"Oat flour or 1:1 gluten-free flour",ratio:"Use 1:1 by weight",tip:"Check whether the blend already contains xanthan gum.",allergens:["gluten"]},
+  {keywords:["breadcrumbs","bread crumbs"],swap:"Crushed oats or crackers",ratio:"Use 1:1",tip:"Pulse until fine for a close texture.",allergens:["gluten"]},
+  {keywords:["cornstarch","corn starch"],swap:"All-purpose flour",ratio:"Use 2 tbsp flour for every 1 tbsp cornstarch",tip:"Cook longer to remove the raw-flour taste.",allergens:["gluten"]},
+  {keywords:["baking powder"],swap:"Baking soda plus cream of tartar",ratio:"Use 1/4 tsp soda + 1/2 tsp cream of tartar per 1 tsp",tip:"Mix and use immediately.",allergens:[]},
+  {keywords:["baking soda"],swap:"Baking powder",ratio:"Use 3 tsp baking powder for 1 tsp baking soda",tip:"Reduce added acidic ingredients.",allergens:[]},
+  {keywords:["honey"],swap:"Maple syrup",ratio:"Use 3/4 cup maple syrup for 1 cup honey",tip:"Reduce another liquid slightly.",allergens:[]},
+  {keywords:["maple syrup"],swap:"Honey",ratio:"Use 1:1",tip:"Honey browns more quickly.",allergens:[]},
+  {keywords:["brown sugar"],swap:"White sugar plus molasses",ratio:"For 1 cup: 1 cup sugar + 1 tbsp molasses",tip:"Use 2 tsp molasses for light brown sugar.",allergens:[]},
+  {keywords:["chocolate","chocolate chips"],swap:"Cocoa powder plus oil and sugar",ratio:"For 1 oz: 3 tbsp cocoa + 1 tbsp oil + 1 tbsp sugar",tip:"Best for baking, not decoration.",allergens:[]},
+  {keywords:["mayonnaise","mayo"],swap:"Plain yogurt or mashed avocado",ratio:"Use 1:1",tip:"Yogurt is tangier; avocado is richer.",allergens:["dairy","nuts"]},
+  {keywords:["oil","cooking oil"],swap:"Unsweetened applesauce or melted butter",ratio:"Use 1:1 applesauce in baking; 1:1 butter for cooking",tip:"Applesauce works best in moist baked goods.",allergens:["dairy"]},
+  {keywords:["peanut butter"],swap:"Sunflower seed butter or tahini",ratio:"Use 1:1",tip:"Choose sunflower seed butter for a nut-free option.",allergens:["nuts","seeds"]},
+  {keywords:["almond milk","nut milk"],swap:"Oat milk or soy milk",ratio:"Use 1:1",tip:"Oat is creamy; soy has more protein.",allergens:["soy"]},
+  {keywords:["soy sauce","soya sauce"],swap:"Tamari or coconut aminos",ratio:"Use 1:1 tamari; 1:1 to 1.25x coconut aminos",tip:"Coconut aminos are sweeter and less salty.",allergens:["soy"]},
+  {keywords:["tofu"],swap:"Cooked chickpeas or seitan",ratio:"Use 1 cup chickpeas per 150 g tofu",tip:"Choose seitan only if gluten is okay.",allergens:["gluten","soy"]},
+  {keywords:["chicken","meat"],swap:"Chickpeas or lentils",ratio:"Use 1 can chickpeas or 1 cup cooked lentils",tip:"Season firmly and add extra sauce.",allergens:[]},
+  {keywords:["beef","ground beef","mince"],swap:"Lentils or chopped mushrooms",ratio:"Use 1 cup cooked lentils or 225 g mushrooms",tip:"Brown mushrooms or lentils before adding sauce.",allergens:[]},
+  {keywords:["fish","tuna"],swap:"Mashed chickpeas or canned white beans",ratio:"Use 1 cup chickpeas or beans per 1 can fish",tip:"Add lemon juice and seaweed for a fishier flavour.",allergens:[]},
+  {keywords:["parmesan"],swap:"Nutritional yeast",ratio:"Use 1 tbsp nutritional yeast for 2 tbsp parmesan",tip:"Add a pinch of salt for a savoury finish.",allergens:[]},
+  {keywords:["gelatin"],swap:"Agar-agar",ratio:"Use about 1 tsp agar powder per 1 cup liquid",tip:"Bring the liquid to a boil to activate agar.",allergens:[]}
+];
+const SKILLS = [
+  {id:"dicing",name:"Dicing",icon:"🔪",steps:["Make a flat base so the item will not roll.","Cut lengthwise into evenly sized sticks.","Turn the sticks and cut across to cubes.","Keep pieces close in size for even cooking."]},
+  {id:"slicing",name:"Slicing",icon:"🥕",steps:["Wash the ingredient and secure a flat edge.","Hold it with a claw grip and tuck fingertips.","Use a smooth forward-and-down motion.","Adjust thickness for the recipe."]},
+  {id:"garlic",name:"Mincing Garlic",icon:"🧄",steps:["Separate a clove and press it with a knife.","Remove the papery skin.","Slice the clove finely in both directions.","Scrape and mince until tiny pieces form."]},
+  {id:"pasta",name:"Boiling Pasta",icon:"🍝",steps:["Use plenty of boiling, salted water.","Add pasta and stir so it does not stick.","Cook until al dente according to the package.","Reserve a cup of water, then drain."]},
+  {id:"searing",name:"Searing",icon:"🥩",steps:["Pat the food dry and season lightly.","Heat oil in a wide pan until it shimmers.","Add food without crowding the pan.","Leave undisturbed until browned, then flip."]},
+  {id:"measuring",name:"Measuring",icon:"🥄",steps:["Use dry cups for dry ingredients and liquid cups for liquids.","Fill dry cups fully, then level with a straight edge.","Place liquid cups flat and read at eye level.","Use the scale or spoon unit the recipe specifies."]}
 ];
