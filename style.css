@@ -33,20 +33,6 @@ h1,h2,h3,p { margin-top:0; } h1 { line-height:1.12; letter-spacing:-.02em; }
 .household-control,.planner-controls label { display:grid; gap:6px; font-weight:800; color:var(--muted); }
 .heading-controls { display:flex; gap:12px; align-items:end; } .unit-control { display:grid; gap:6px; font-weight:800; color:var(--muted); }
 .recipe-toolbar { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:-8px 0 16px; } .recipe-toolbar p { margin:0; }
-.weekly-meal-planner { margin-bottom:18px; }
-.weekly-meal-planner [hidden] { display:none !important; }
-.weekly-planner-toggle { width:100%; min-height:58px; display:flex; align-items:center; border:0; border-radius:12px; background:var(--green); color:white; padding:12px 16px; cursor:pointer; text-align:left; font-weight:800; }
-.weekly-planner-toggle::after { content:"+"; margin-left:auto; font-size:1.5rem; line-height:1; }
-.weekly-planner-toggle.open::after { content:"−"; }
-.weekly-planner-toggle span { display:grid; gap:1px; }
-.weekly-planner-toggle strong { font-size:1rem; }
-.weekly-planner-toggle small { color:#eef5ef; font-weight:600; }
-.weekly-planner-toggle.open { border-radius:12px 12px 0 0; }
-.weekly-days { display:grid; grid-template-columns:repeat(7,minmax(145px,1fr)); gap:8px; overflow-x:auto; margin-top:12px; }
-.weekly-day { min-width:145px; border:1px solid var(--border); border-radius:12px; background:var(--cream); padding:10px; }
-.weekly-day h3 { margin:0 0 8px; font-size:.9rem; }
-.weekly-day label { display:grid; gap:3px; margin-top:7px; color:var(--muted); font-size:.72rem; font-weight:900; }
-.weekly-day select { width:100%; min-height:38px; padding:6px; font-size:.72rem; }
 .swap-card-button { width:100%; margin-top:10px; border:0; border-radius:10px; background:#fff2ea; color:#b84a36; min-height:40px; font-weight:900; }
 .kitchen-layout { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
 .kitchen-grid,.tools-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; }
