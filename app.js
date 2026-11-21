@@ -25,6 +25,11 @@
   let savedRecipeIds = storage.get("easy-eats-saved-recipes", []);
   let kitchen = storage.get("easy-eats-kitchen", ["Stove", "Pan", "Pot", "Saucepan", "Microwave"]);
   let weeklyRecipeIds = storage.get("easy-eats-weekly-recipes", RECIPES.slice(0, 6).map(function (recipe) { return recipe.id; }));
+  let weeklySelections = storage.get("easy-eats-weekly-selections", {
+    breakfast:["","","","","","",""],
+    lunch:["","","","","","",""],
+    dinner:["","","","","","",""]
+  });
   let unitSystem = storage.get("easy-eats-unit-system", null);
 
   function defaultUnitSystem() {
@@ -60,7 +65,7 @@
   });
 
   // ---------- Weekly recipes ----------
-  const filters = ["All", "Vegan", "Vegetarian", "High-protein", "Halal", "Under $3/serving"];
+  const filters = ["All", "Breakfast", "Lunch", "Dinner", "Vegan", "Vegetarian", "High-protein", "Halal", "Under $3/serving"];
   const filterRow = document.getElementById("recipe-filters");
   const recipeGrid = document.getElementById("recipe-grid");
   const ratings = storage.get("easy-eats-ratings", storage.get("mya-ratings", {}));
@@ -70,6 +75,7 @@
     unitSystem = this.value;
     storage.set("easy-eats-unit-system", unitSystem);
     renderRecipes();
+    renderWeeklyPlanner();
     renderSavedRecipes();
   });
 
@@ -125,15 +131,20 @@
   function matchesFilter(recipe) {
     if (activeFilter === "All") return true;
     if (activeFilter === "Under $3/serving") return recipe.cost < 3;
+    if (["Breakfast", "Lunch", "Dinner"].indexOf(activeFilter) !== -1) return getMealType(recipe) === activeFilter;
     return recipe.tags.indexOf(activeFilter) !== -1;
+  }
+
+  function getMealType(recipe) {
+    if (recipe.mealType) return recipe.mealType;
+    if (["egg-skillet"].indexOf(recipe.id) !== -1) return "Breakfast";
+    if (["tuna-wrap", "lentil-soup", "bean-tacos"].indexOf(recipe.id) !== -1) return "Lunch";
+    return "Dinner";
   }
 
   function renderRecipes() {
     recipeGrid.replaceChildren();
-    const weeklyRecipes = weeklyRecipeIds.map(function (id) {
-      return RECIPES.find(function (recipe) { return recipe.id === id; });
-    }).filter(Boolean);
-    weeklyRecipes.filter(matchesFilter).forEach(function (recipe) {
+    RECIPES.filter(matchesFilter).forEach(function (recipe) {
       const card = document.createElement("article");
       card.className = "recipe-card";
 
@@ -180,12 +191,12 @@
         rating.textContent = "Your rating: " + "★".repeat(ratings[recipe.id]) + "☆".repeat(5 - ratings[recipe.id]);
         body.appendChild(rating);
       }
-      const swapButton = document.createElement("button");
-      swapButton.type = "button";
-      swapButton.className = "swap-card-button";
-      swapButton.textContent = "Swap this meal";
-      swapButton.addEventListener("click", function () { swapOneMeal(recipe.id); });
-      body.appendChild(swapButton);
+      const addButton = document.createElement("button");
+      addButton.type = "button";
+      addButton.className = "swap-card-button";
+      addButton.textContent = "Add " + getMealType(recipe).toLowerCase() + " to week";
+      addButton.addEventListener("click", function () { addRecipeToWeek(recipe); });
+      body.appendChild(addButton);
       card.append(photo, body);
       recipeGrid.appendChild(card);
     });
@@ -196,11 +207,18 @@
   }
 
   function refreshAllMeals() {
-    const shuffled = RECIPES.slice().sort(function () { return Math.random() - 0.5; });
-    weeklyRecipeIds = shuffled.slice(0, 6).map(function (recipe) { return recipe.id; });
-    saveWeeklyIds();
-    document.getElementById("weekly-status").textContent = "Meals refreshed — " + weeklyRecipeIds.length + " choices for this week";
-    renderRecipes();
+    ["Breakfast", "Lunch", "Dinner"].forEach(function (mealName) {
+      const choices = RECIPES.filter(function (recipe) { return getMealType(recipe) === mealName; });
+      const mealType = mealName.toLowerCase();
+      choices.sort(function () { return Math.random() - 0.5; });
+      weeklySelections[mealType] = Array.from({ length: 7 }, function (_, index) {
+        return choices[index % choices.length].id;
+      });
+    });
+    saveWeeklySelections();
+    renderWeeklyPlanner();
+    document.getElementById("weekly-status").textContent = "Meals refreshed — 7 days planned";
+    if (selectedBudget && selectedStore) renderPlanner();
   }
 
   function swapOneMeal(recipeId) {
@@ -215,6 +233,85 @@
     document.getElementById("weekly-status").textContent = "One meal swapped for " + replacement.name;
     renderRecipes();
   }
+
+  function saveWeeklySelections() {
+    storage.set("easy-eats-weekly-selections", weeklySelections);
+  }
+
+  function renderWeeklyPlanner() {
+    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    const planner = document.getElementById("weekly-days");
+    planner.replaceChildren();
+
+    days.forEach(function (day, dayIndex) {
+      const dayCard = document.createElement("div");
+      dayCard.className = "weekly-day";
+      dayCard.innerHTML = "<h3>" + day + "</h3>";
+
+      ["Breakfast", "Lunch", "Dinner"].forEach(function (mealName) {
+        const mealType = mealName.toLowerCase();
+        const label = document.createElement("label");
+        label.textContent = mealName;
+        const select = document.createElement("select");
+        select.dataset.meal = mealType;
+        select.dataset.day = String(dayIndex);
+
+        const placeholder = document.createElement("option");
+        placeholder.value = "";
+        placeholder.textContent = "Choose " + mealType;
+        select.appendChild(placeholder);
+
+        RECIPES.filter(function (recipe) { return getMealType(recipe) === mealName; }).forEach(function (recipe) {
+          const option = document.createElement("option");
+          option.value = recipe.id;
+          option.textContent = recipe.emoji + " " + recipe.name;
+          select.appendChild(option);
+        });
+
+        select.value = weeklySelections[mealType][dayIndex] || "";
+        select.addEventListener("change", function () {
+          weeklySelections[mealType][dayIndex] = this.value;
+          saveWeeklySelections();
+          document.getElementById("weekly-status").textContent = "Updated " + day + " " + mealType;
+          if (selectedBudget && selectedStore) renderPlanner();
+        });
+        label.appendChild(select);
+        dayCard.appendChild(label);
+      });
+      planner.appendChild(dayCard);
+    });
+  }
+
+  function addRecipeToWeek(recipe) {
+    const mealType = getMealType(recipe).toLowerCase();
+    let dayIndex = weeklySelections[mealType].findIndex(function (recipeId) { return !recipeId; });
+    if (dayIndex === -1) dayIndex = 0;
+    weeklySelections[mealType][dayIndex] = recipe.id;
+    saveWeeklySelections();
+    renderWeeklyPlanner();
+
+    const toggle = document.getElementById("toggle-week-planner");
+    const planner = document.getElementById("weekly-days");
+    planner.hidden = false;
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.classList.add("open");
+    document.getElementById("weekly-planner-toggle-title").textContent = "Close weekly planner";
+
+    const dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    document.getElementById("weekly-status").textContent =
+      recipe.name + " added to " + dayNames[dayIndex] + " " + mealType;
+    if (selectedBudget && selectedStore) renderPlanner();
+  }
+
+  document.getElementById("toggle-week-planner").addEventListener("click", function () {
+    const planner = document.getElementById("weekly-days");
+    const isOpen = this.getAttribute("aria-expanded") === "true";
+    planner.hidden = isOpen;
+    this.setAttribute("aria-expanded", isOpen ? "false" : "true");
+    this.classList.toggle("open", !isOpen);
+    document.getElementById("weekly-planner-toggle-title").textContent =
+      isOpen ? "Open weekly planner" : "Close weekly planner";
+  });
 
   document.getElementById("refresh-meals").addEventListener("click", refreshAllMeals);
 
@@ -431,21 +528,13 @@
   renderStoreMapLinks("");
 
   function buildMealPlan() {
-    const refreshed = weeklyRecipeIds.map(function (id) {
-      return RECIPES.find(function (recipe) { return recipe.id === id; });
-    }).filter(Boolean);
-    if (selectedBudget === null) return refreshed;
-    // Smaller budgets favor the cheapest recipes; larger budgets rotate more variety.
-    let affordable = RECIPES.slice().sort(function (a, b) { return a.cost - b.cost; });
-    if (refreshed.length) affordable = refreshed.concat(affordable.filter(function (recipe) {
-      return refreshed.indexOf(recipe) === -1;
-    }));
-    if (selectedBudget <= 20) affordable = affordable.filter(function (recipe) { return recipe.cost <= 2.95; });
-    else if (selectedBudget <= 50) affordable = affordable.filter(function (recipe) { return recipe.cost <= 4.80; });
     const plan = [];
-    for (let day = 0; day < 14; day++) {
-      plan.push(affordable[day % affordable.length]);
-    }
+    ["breakfast", "lunch", "dinner"].forEach(function (mealType) {
+      weeklySelections[mealType].forEach(function (recipeId) {
+        const recipe = RECIPES.find(function (item) { return item.id === recipeId; });
+        if (recipe) plan.push(recipe);
+      });
+    });
     return plan;
   }
 
@@ -469,7 +558,8 @@
     });
     return Object.keys(totals).map(function (key) {
       const item = totals[key];
-      return { name:item.name, quantity:formatQuantity(item.amount,item.unit), price:estimatedPrice(item,item.amount), rawName:item.name };
+      const householdAmount = item.amount * householdSize;
+      return { name:item.name, quantity:formatQuantity(item.amount,item.unit), price:estimatedPrice(item,householdAmount), rawName:item.name };
     }).filter(function (item) {
       return !pantry.some(function (pantryName) {
         return item.rawName.toLowerCase() === pantryName.toLowerCase();
@@ -496,9 +586,14 @@
     html += '<div class="summary-card">List total<strong>$' + total.toFixed(2) + '</strong></div>';
     html += '<div class="summary-card">' + (left >= 0 ? "Budget left" : "Over budget") + '<strong>$' + Math.abs(left).toFixed(2) + '</strong></div></div>';
     html += '<div class="planner-columns">';
-    html += '<div><div class="panel"><h2>14-day dinner plan</h2><div class="meal-grid">';
-    plan.forEach(function (recipe, index) {
-      html += '<div class="meal-day"><small>Day ' + (index + 1) + '</small><span>' + recipe.emoji + ' ' + recipe.name + '</span></div>';
+    html += '<div><div class="panel"><h2>7-day meal plan</h2><div class="meal-grid">';
+    ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].forEach(function (day, dayIndex) {
+      let meals = "";
+      ["breakfast", "lunch", "dinner"].forEach(function (mealType) {
+        const recipe = RECIPES.find(function (item) { return item.id === weeklySelections[mealType][dayIndex]; });
+        if (recipe) meals += '<span>' + recipe.emoji + ' ' + recipe.name + '</span>';
+      });
+      html += '<div class="meal-day"><small>' + day + '</small>' + meals + '</div>';
     });
     html += '</div></div>';
     html += '<div><div class="panel"><h2>Grocery list · ' + STORE_NAMES[selectedStore] + '</h2><table class="grocery-table"><thead><tr><th>Item</th><th>Quantity</th><th>Price</th></tr></thead><tbody>';

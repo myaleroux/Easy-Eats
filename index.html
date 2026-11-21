@@ -57,6 +57,12 @@
       </div>
       <div class="filter-row" id="recipe-filters" aria-label="Recipe filters"></div>
       <div class="recipe-toolbar"><p class="muted" id="weekly-status">Your current weekly selections</p><button class="button secondary" id="refresh-meals" type="button">Refresh all meals</button></div>
+      <div class="weekly-meal-planner panel">
+        <button class="weekly-planner-toggle" id="toggle-week-planner" type="button" aria-expanded="false" aria-controls="weekly-days">
+          <span><strong id="weekly-planner-toggle-title">Open weekly planner</strong><small>Plan breakfast, lunch, and dinner for 7 days.</small></span>
+        </button>
+        <div class="weekly-days" id="weekly-days" hidden></div>
+      </div>
       <div class="recipe-grid" id="recipe-grid"></div>
     </section>
 
@@ -84,7 +90,7 @@
     <section id="groceries" data-view hidden>
       <div class="section-heading"><div><p class="eyebrow">Stretch your dollars</p><h1>Grocery Planner</h1></div></div>
       <div class="planner-controls">
-        <fieldset><legend>Two-week budget</legend><div class="chip-row" id="budget-options"></div></fieldset>
+        <fieldset><legend>Weekly budget</legend><div class="chip-row" id="budget-options"></div></fieldset>
         <label>My store<select id="store-select"><option value="">Choose a store</option></select></label>
       </div>
       <div class="nearby-stores panel">
@@ -97,7 +103,7 @@
         <p class="location-status muted" id="location-status" aria-live="polite"></p>
         <div class="store-map-links" id="store-map-links"></div>
       </div>
-      <div id="planner-output"><div class="planner-empty"><span>🛒</span><h2>Choose a budget and store</h2><p>We'll build a 14-day dinner plan and an easy grocery list.</p></div></div>
+      <div id="planner-output"><div class="planner-empty"><span>🛒</span><h2>Choose a budget and store</h2><p>We'll combine your 7-day breakfast, lunch, and dinner choices into an easy grocery list.</p></div></div>
     </section>
 
     <section id="swaps" data-view hidden>
