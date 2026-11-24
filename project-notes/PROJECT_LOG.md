@@ -71,6 +71,7 @@ Everything we wanted but faked or left out — real logins, a real database, pay
 
 | Feature we faked or skipped | Why a real company would need it | How hard / expensive? |
 |---|---|---|
+| Cloud backend | The prototype is hosted on GitHub Pages, but user data is only saved in browser local storage. A real service needs a shared backend for accounts, synced data, and community features | Medium: a managed backend and hosted database |
 | Real Logins | Each user's pantry and saved recipes must be private and follow them across devices | Medium: a login service |
 | Shared database | Community features need everyone's data in one place | Medium: a hosted database plus a developer |
 | Real AI Swap Chat | The original prompt asked for a fixed swap list; however, a real version must be able to answer any question | Medium: pay for an AI service |
