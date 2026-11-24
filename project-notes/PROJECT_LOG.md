@@ -70,14 +70,15 @@ Copy this block for each session.
 Everything we wanted but faked or left out — real logins, a real database, payments, security, moderation, an app, staff, etc. For each one, say **why** it's needed and roughly **how hard or expensive** you think it would be.
 
 | Feature we faked or skipped | Why a real company would need it | How hard / expensive? |
-|Real Logins|Each user's pantry and saved recipes must be private and follow them across devices|Medium: a log in service|
-|Shared database |Community features need everyone's data in one place | Medium: a hosted database plus a developer|
-|Real AI Swap Chat| The original prompt asked for a fixed swap list however, a real version must be able to answer any question|Medium: Pat for an AI service|
-|Payments| The 2.99/month premium plan needs real billing|Medium: Payment software that charges fees|
-|Live store prices|Current prices and deals are sample data|Hard: needs store agreements or constant updating|
-|Moderation|Fake price reports or reviews would misead users|Medium: automatic checks + staff time|
-|Recipe and allergy safety review|Bad swaps, steps, or unsensical recipes could cause  allergic reactions or undercooked food|Medium: part-time nutrition or food-safety reviewer/staff member to find recipes for the app|
-|Customer support| Users need help with accounts, billing, and bugs| Low to medium: Support tools or staff member|
+|---|---|---|
+| Real Logins | Each user's pantry and saved recipes must be private and follow them across devices | Medium: a login service |
+| Shared database | Community features need everyone's data in one place | Medium: a hosted database plus a developer |
+| Real AI Swap Chat | The original prompt asked for a fixed swap list; however, a real version must be able to answer any question | Medium: pay for an AI service |
+| Payments | The $2.99/month premium plan needs real billing | Medium: payment software that charges fees |
+| Live store prices | Current prices and deals are sample data | Hard: needs store agreements or constant updating |
+| Moderation | Fake price reports or reviews would mislead users | Medium: automatic checks plus staff time |
+| Recipe and allergy safety review | Bad swaps, steps, or unsensical recipes could cause allergic reactions or undercooked food | Medium: a part-time nutrition or food-safety reviewer/staff member |
+| Customer support | Users need help with accounts, billing, and bugs | Low to medium: support tools plus staff |
 
 ## Reflection (fill in at the end)
 
