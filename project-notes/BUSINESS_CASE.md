@@ -36,6 +36,7 @@ Each recipe card shows a community rating (for example, "4.6 stars from 312 cook
 Anyone can build this website with AI in a few weeks, so the code is not the advantage. The advantage is what users contribute: ratings, swap results, price reports, taste history, and dietary needs. This grows with every user and every week, meaning a copycat will start at zero.
 
 - What about your business is **valuable, rare, hard to imitate and well-organized** (VRIN)?
+
 Easy Eats' most valuable resource is its community data: ratings, swap results, and local price reports that make recipes and deals better. It is rare because no competitor collects this specifically for local home cooks, and it is hard to imitate because it takes months of real user activity to build. It is well-organized because the app collects data automatically whenever someone rates a meal or reports a price. The features alone are easy to copy, but the data and local community are not. Many apps can perform one task Easy Eats offers, but the problem is that users must use several apps for separate actions. Easy Eats combines those actions in one place.
 
 - What would a competitor with a bigger budget need to copy you, and how long would it take?
@@ -45,6 +46,7 @@ A company like Mealime or Flipp could copy the features in a few weeks. To truly
 - Which of your advantages get *stronger* over time (data, network, brand, switching costs)?
 
 Data grows with every meal rated and price reported. The network grows as each new user makes the app better and increases accuracy for the next. Switching costs rise as users build their pantry, profile, saved recipes, and skills progress. The brand strengthens as Easy Eats becomes the local name for cooking on a budget.
+
 ## 5. Cloud and operations
 
 What would it take to run this for real? Which parts would you buy as cloud services (SaaS, PaaS, IaaS), and what are the risks of relying on them?
@@ -55,9 +57,10 @@ Easy Eats would need a small team made up of a founder, developer, and someone t
 
 For SaaS, I would include payment software for the $2.99/month subscriptions and Google Maps for the store finder. The AI swap chat would use an existing AI model through an API because developing and training our own would be too expensive.
 
- For PaaS, Easy Eats would need a managed platform to run the code and central database. Right now, ratings, pantry items, and kitchen items are saved in local storage, meaning they stay in the user's individual browser. As a result, users cannot currently sync across devices or share data with roommates, partners, or families. A central database would fix this and allow community ratings and price reports to build over time.
- 
- I would not use IaaS at launch because, with a small community, there would not be enough staff or budget to set up, patch, and acquire servers. There are a few risks when relying on these services:
+For PaaS, Easy Eats would need a managed platform to run the code and central database. Right now, ratings, pantry items, and kitchen items are saved in local storage, meaning they stay in the user's individual browser. As a result, users cannot currently sync across devices or share data with roommates, partners, or families. A central database would fix this and allow community ratings and price reports to build over time.
+
+I would not use IaaS at launch because, with a small community, there would not be enough staff or budget to set up, patch, and acquire servers. There are a couple risks when relying on these services:
+
  1. If our PaaS provider went down, logins, synced pantries, household lists, price reports, and store comparisons would stop working. User's recipes and latest grocery list would have to be saved on their device so that they can continue to cook, plan, and shop offline.
  2. The AI could suggest an unsafe swap for someone with an allergy, unsafe ingredients would have to be blocked using the user's dietary profile, show allergy warnings, and instruct users to check labels.
 
