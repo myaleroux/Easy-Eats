@@ -17,7 +17,8 @@ Copy this block for each session.
 - **Goal for this session:** Get all my general ideas out, see what the app looks like and fix any issues later.
 - **Key prompts we gave Copilot** (paste the important ones):
   1. Build a complete, working website called MyaFoodApp: an AI-style recipe book for students on a budget.
-  2.Show 9 sample recipes as cards (photo placeholder using an emoji, name, cook time, cost per serving in CAD, calories per serving, and tags like vegan, high-protein, halal).
+
+  2. Show 9 sample recipes as cards (photo placeholder using an emoji, name, cook time, cost per serving in CAD, calories per serving, and tags like vegan, high-protein, halal).
 - **What worked:** Prompt made initial version of the app well and followed every prompt correctly
 - **What broke, and how we fixed it:** "MyaFoodApp" was a placeholder name, and I forgot to remove it from the outline I gave Copilot. Changed November 19
 - **Committed?** Yes, Agent host session d6c3ab6c-efc2-4af6-8fa1-aaa7b0c668b4 - turn 1
@@ -80,6 +81,7 @@ Everything we wanted but faked or left out — real logins, a real database, pay
 | Moderation | Fake price reports or reviews would mislead users | Medium: automatic checks plus staff time |
 | Recipe and allergy safety review | Bad swaps, steps, or unsensical recipes could cause allergic reactions or undercooked food | Medium: a part-time nutrition or food-safety reviewer/staff member |
 | Customer support | Users need help with accounts, billing, and bugs | Low to medium: support tools plus staff |
+| Premium accounts | In order to make a profit, users who want to access premium meals will need a premium account. For the sake of the prototype, all recipes are available regardless of premium indication | Low: Once billing software is installed, code needs to be tweaked to account for premium accounts being launched |
 
 ## Reflection (fill in at the end)
 
