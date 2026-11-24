@@ -21,7 +21,7 @@ Copy this block for each session.
   2. Show 9 sample recipes as cards (photo placeholder using an emoji, name, cook time, cost per serving in CAD, calories per serving, and tags like vegan, high-protein, halal).
 - **What worked:** Prompt made initial version of the app well and followed every prompt correctly
 - **What broke, and how we fixed it:** "MyaFoodApp" was a placeholder name, and I forgot to remove it from the outline I gave Copilot. Changed November 19
-- **Committed?** Yes, Agent host session d6c3ab6c-efc2-4af6-8fa1-aaa7b0c668b4 - turn 1
+- **Committed?** Yes, c2a64d7 — “Initial commit”
 
 ### Session — November 19 — driver: Mya
 
@@ -34,7 +34,7 @@ Copy this block for each session.
   3. I also dont want it to be solely target to only students; Easy Eats, Easy Saving instead of Smart Meals for student life
 - **What worked:** Costco and Real Atlantic Superstore now appear in the dropdown menu. Map option works: Users select a store name and it opens an external Google Maps link showing where the store is according to their location.
 - **What broke, and how we fixed it:** No issues logged in this section.
-- **Committed?** Yes, 2132e8f — Agent host session d6c3ab6c-efc2-4af6-8fa1-aaa7b0c668b4 - turn 2
+- **Committed?** Yes, 2132e8f — “Agent host session d6c3ab6c-efc2-4af6-8fa1-aaa7b0c668b4 - turn 2”
 
 ### Session — November 20 — driver: Mya
 
@@ -56,7 +56,16 @@ Copy this block for each session.
   3. In the Grocery Planner, add a “Report a price” button next to each deal that opens a small form (item, price, store) and shows “Thanks! Your report helps 1,240 shoppers in Antigonish.”
 - **What worked:** Features were added.
 - **What broke, and how we fixed it:** All the  weekly recipe cards disappeared yet all other features remained the same. After lots of "add the recipe cards back" I eventually had to as Copilot to revert the app back to how it was before the sample community data prompt. Afterwards, I gave Copilot a step by step, ensuring each individual feature was working before giving a new one. Ensured to note the importance not to delete any existing code and to just add.
-- **Committed?** Yes, 4050728 — Agent host session 68d60474-24b9-4e95-b4d3-856386e1af00 - turn 13
+- **Committed?** Yes, d251f74 — “Add community data and refresh project documentation”
+
+### Session — November 24 — driver: Mya
+
+- **Goal for this session:** Fix up grocery planner
+- **Key prompts we gave Copilot** (paste the important ones):
+  1. in grocery planner, allow users to type in their own budget as they are only limited to options $100 and below. Ensure no code is deleted and only added.
+- **What worked:** Features were added.
+- **What broke, and how we fixed it:** No issues for this session
+- **Committed?** No, the custom budget changes are still uncommitted.
 ---
 
 ## Things that broke (running list)
