@@ -72,4 +72,4 @@ The AI could suggest a swap that triggers an allergy or give unclear steps that 
 Diet, health goals, religion (halal), and location are sensitive information. A breach or sale of this data to stores would break users' trust. Easy Eats would never sell personal data, give stores only anonymous totals, collect only what it needs, and let users delete their account and data at any time, following applicable Canadian privacy laws such as PIPEDA.
 Paid store deals could push shoppers toward less healthy or pricier food, and fake price reports could mislead users. Small local stores could also be left out if only big chains pay. Easy Eats would label every sponsored deal, never let payments change a user's budget or recommendations, flag price reports that look wrong, and list small local stores for free.
 
-AI use: I used Claude to help edit answers to this business case and I used GitHub Copilot to build the website.
+AI use: I used Claude and Copilot to help clean up this business case and I used GitHub Copilot to build the website.
