@@ -61,9 +61,10 @@ Copy this block for each session.
 ## Things that broke (running list)
 
 | Date | What went wrong | What we tried | What finally fixed it |
-|November 17|The app used my placeholder name, "MyaFoodApp"|Asked Copilot to change it from "MyaFoodApp" to "Easy Eats"|Worked on Nov 19|
-|November 20 |Adding "Plan your week" only prompted a "Clear Week" button to appear, making it so you had to click that for the dropdown to appear. | Asked Copilot to keep the clear week button but add a button to open that dropdown menu, making it easier to understand: Plan week button was added, but didn't drop anything down.|Asked Copilot to remove any commits related to plan out your week and redo it |
-|November 21| Tried adding a price reporting feature to aid network effects and weekly recipes all disappeared.| Prompted: Weekly recipes are still gone from the tab. Add the list of weekly recipes to add to the weekly planner back into the tab| Asked Copilot to revert the app bback to how it was before the sample community data promppt and followed with each prompt individually ensuring each worked before moving on to the next. Insisted that all previous code remains the same to only add not delete/change anything|
+|---|---|---|---|
+| November 17 | The app used my placeholder name, "MyaFoodApp"| Asked Copilot to change it from "MyaFoodApp" to "Easy Eats" | Worked on Nov 19 |
+| November 20 | Adding "Plan your week" only prompted a "Clear Week" button to appear, making it so you had to click that for the dropdown to appear. | Asked Copilot to keep the clear week button but add a button to open that dropdown menu, making it easier to understand. | Asked Copilot to remove any commits related to plan out your week and redo it. |
+| November 21 | Tried adding a price reporting feature to aid network effects and weekly recipes all disappeared. | Prompted: Weekly recipes are still gone from the tab. Add the list of weekly recipes to add to the weekly planner back into the tab | Asked Copilot to revert the app back to how it was before the sample community data promppt and followed with each prompt individually ensuring each worked before moving on to the next. Insisted that all previous code remains the same to only add not delete/change anything |
 ## What a real version would need
 
 Everything we wanted but faked or left out — real logins, a real database, payments, security, moderation, an app, staff, etc. For each one, say **why** it's needed and roughly **how hard or expensive** you think it would be.
