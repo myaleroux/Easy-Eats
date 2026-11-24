@@ -75,6 +75,10 @@ select,input[type="text"],input[type="search"] { min-height:46px; border:1px sol
 .detail-columns { display:grid; grid-template-columns:1fr 1.25fr; gap:24px; } .detail-columns ul,.detail-columns ol { padding-left:20px; } .detail-columns li { margin-bottom:8px; }
 .star-rating { display:flex; gap:3px; margin-top:12px; } .star-button { width:44px; height:44px; border:0; background:transparent; color:#c9cfca; font-size:1.8rem; padding:0; } .star-button.filled { color:#e2a827; }
 .planner-controls { display:grid; grid-template-columns:1fr 220px; gap:18px; align-items:end; margin-bottom:24px; } .planner-controls fieldset { border:0; margin:0; padding:0; } .planner-controls legend { font-weight:800; color:var(--muted); margin-bottom:6px; } .planner-controls select { width:100%; }
+.custom-budget { display:flex; align-items:center; gap:10px; margin-top:10px; color:var(--muted); font-weight:800; }
+.custom-budget-input { display:flex; align-items:center; max-width:150px; min-height:42px; border:1px solid var(--border); border-radius:999px; background:white; padding-left:12px; }
+.custom-budget-input span { color:var(--muted); font-weight:900; }
+.custom-budget-input input { width:110px; min-height:40px; border:0; padding:8px 12px 8px 5px; background:transparent; }
 .nearby-stores { margin-bottom:24px; } .nearby-heading { display:flex; align-items:start; justify-content:space-between; gap:18px; } .nearby-heading h2 { margin-bottom:4px; }
 .location-form { display:grid; grid-template-columns:1fr auto; gap:8px; max-width:680px; } .location-form input { width:100%; } .location-status { min-height:24px; margin:10px 0 0; }
 .store-map-links { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin-top:12px; }

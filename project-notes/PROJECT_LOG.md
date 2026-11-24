@@ -34,7 +34,7 @@ Copy this block for each session.
   3. I also dont want it to be solely target to only students; Easy Eats, Easy Saving instead of Smart Meals for student life
 - **What worked:** Costco and Real Atlantic Superstore now appear in the dropdown menu. Map option works: Users select a store name and it opens an external Google Maps link showing where the store is according to their location.
 - **What broke, and how we fixed it:** No issues logged in this section.
-- **Committed?** Yes, 2132e8f — “Agent host session d6c3ab6c-efc2-4af6-8fa1-aaa7b0c668b4 - turn 2”
+- **Committed?** Yes, 2132e8f — “Agent host session d6c3ab6c-efc2-4af6-8fa1-aaa7b0c668b4 - turn 2” (app name, pantry, and store updates)
 
 ### Session — November 20 — driver: Mya
 
@@ -65,7 +65,11 @@ Copy this block for each session.
   1. in grocery planner, allow users to type in their own budget as they are only limited to options $100 and below. Ensure no code is deleted and only added.
 - **What worked:** Features were added.
 - **What broke, and how we fixed it:** No issues for this session
-- **Committed?** No, the custom budget changes are still uncommitted.
+- **Committed?** Yes, Added a custom weekly budget field above $100 in the Grocery Planner.
+- Supports decimal values
+- Recalculates the plan when entered
+- Preserves the existing preset budget options
+- Validation for budgets greater than $0
 ---
 
 ## Things that broke (running list)

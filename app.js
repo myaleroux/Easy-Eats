@@ -464,11 +464,29 @@
     button.textContent = budget === 100 ? "Under $100" : "$" + budget;
     button.addEventListener("click", function () {
       selectedBudget = budget;
+      document.getElementById("custom-budget").value = "";
       budgetRow.querySelectorAll("button").forEach(function (item) { item.classList.remove("active"); });
       button.classList.add("active");
       if (selectedStore) renderPlanner();
     });
     budgetRow.appendChild(button);
+  });
+
+  const customBudgetInput = document.getElementById("custom-budget");
+  customBudgetInput.addEventListener("input", function () {
+    const customBudget = Number(this.value);
+    if (!Number.isFinite(customBudget) || customBudget <= 0) {
+      selectedBudget = null;
+      budgetRow.querySelectorAll("button").forEach(function (item) { item.classList.remove("active"); });
+      if (selectedStore) {
+        document.getElementById("planner-output").innerHTML = '<div class="planner-empty"><span>🛒</span><h2>Enter a valid weekly budget</h2><p>Choose a preset amount or enter a custom budget greater than $0.</p></div>';
+      }
+      return;
+    }
+
+    selectedBudget = customBudget;
+    budgetRow.querySelectorAll("button").forEach(function (item) { item.classList.remove("active"); });
+    if (selectedStore) renderPlanner();
   });
 
   const storeSelect = document.getElementById("store-select");
