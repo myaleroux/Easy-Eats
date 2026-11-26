@@ -20,14 +20,14 @@ Copy this block for each session.
 
   2. Show 9 sample recipes as cards (photo placeholder using an emoji, name, cook time, cost per serving in CAD, calories per serving, and tags like vegan, high-protein, halal).
 - **What worked:** Prompt made initial version of the app well and followed every prompt correctly
-- **What broke, and how we fixed it:** "MyaFoodApp" was a placeholder name, and I forgot to remove it from the outline I gave Copilot. Changed November 19
+- **What broke, and how we fixed it:** "MyaFoodApp" was a placeholder name, and I forgot to remove it from the outline I gave Copilot. Changed November 19 once I figured out a new name.
 - **Committed?** Yes, c2a64d7 — “Initial commit”
 
 ### Session — November 19 — driver: Mya
 
 - **Goal for this session:** Fix general issues from the initial commit
 - **Key prompts we gave Copilot** (paste the important ones):
-  1. Change name from "MyaFoodApp" to "Easy Eats" and add my pantry in te tabs section and allow users to type in their own options as well as providing them with options.
+  1. Change name from "MyaFoodApp" to "Easy Eats" and add my pantry in the tabs section and allow users to type in their own options as well as providing them with options.
 
   2. Add Real Atlantic Superstore and Costco to the store lists, maybe even add a map feature so users can see what grocery stores are nearby.
 
@@ -44,7 +44,7 @@ Copy this block for each session.
   2. Add a saved recipes tab, a common tools section, A "What's in my kitchen" setting, and recipes adjust accordingly, A refresh button that swaps a meal for a different one, a reset chat button that clears swaps so recipes show their original ingredients, and a switch between metric (grams, ML)  and imperial (cups, oz), defaulting to user's location.
   3. Add a feature where users can pick from breakfast recipes, lunch recipes, dinner recipes for the week. Once they find and select recipes they like, they're all added together in their grocery list for the week.
 - **What worked:** Recipes are now much more concise and easier to follow for beginners. Saved recipes, common tools, and my kitchen tab are now available. Meals are now individually swappable and swappable per week. Switch between metric and imperial is now available and changes accordingly to each recipe
-- **What broke, and how we fixed it:** When adding "Plan your week" only a "clear week" button was there, and you have to click it for the drop down to appear, which can be misleading and confusing to users. Fixed it with lots of trial and error, eventually I had to remove any previous commits related to that prompt and redo it.
+- **What broke, and how we fixed it:** When adding "Plan your week" only a "clear week" button was there, and you have to click it for the drop down to appear, which can be misleading and confusing to users. Fixed it with lots of trial and error (it doesn't work, make it so there's a button that opens the drop down alongside clear week), eventually I had to remove any previous commits related to that prompt and asked Copilot to redo it.
 - **Committed?** Yes, 756de99 — “Add recipe planning and kitchen features”
 
 ### Session — November 21 — driver: Mya
@@ -62,7 +62,7 @@ Copy this block for each session.
 
 - **Goal for this session:** Fix up grocery planner
 - **Key prompts we gave Copilot** (paste the important ones):
-  1. in grocery planner, allow users to type in their own budget as they are only limited to options $100 and below. Ensure no code is deleted and only added.
+  1. In the grocery planner tab, allow users to type in their own budget as they are only limited to options $100 and below. Ensure no code is deleted and only added.
 - **What worked:** Features were added.
 - **What broke, and how we fixed it:** No issues for this session
 - **Committed?** Yes, Added a custom weekly budget field above $100 in the Grocery Planner.
