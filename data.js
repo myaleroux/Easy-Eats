@@ -20,35 +20,35 @@ const RECIPES = [
 const KITCHEN_APPLIANCES = ["Stove","Oven","Microwave","Air fryer","Pan","Pot","Saucepan","Slow cooker"];
 const COMMON_TOOLS = ["Large pot","Saucepan","Frying pan","Baking tray","Colander","Cutting board","Chef's knife","Wooden spoon","Tongs","Mixing bowl","Ladle","Grater"];
 
-const STORES = ["FreshCo","Sobeys","Walmart","RealAtlanticSuperstore","Costco"];
+const STORES = ["GreenLeaf","HarbourFoods","BudgetBasket","MegaGrocer","BulkClub"];
 const STORE_NAMES = {
-  FreshCo:"FreshCo",
-  Sobeys:"Sobeys",
-  Walmart:"Walmart",
-  RealAtlanticSuperstore:"Real Atlantic Superstore",
-  Costco:"Costco"
+  GreenLeaf:"GreenLeaf",
+  HarbourFoods:"HarbourFoods",
+  BudgetBasket:"BudgetBasket",
+  MegaGrocer:"MegaGrocer",
+  BulkClub:"BulkClub"
 };
 const STORE_MULTIPLIERS = {
-  FreshCo:{FreshCo:1,Sobeys:1.07,Walmart:.96,RealAtlanticSuperstore:1.02,Costco:.91},
-  Sobeys:{FreshCo:.98,Sobeys:1,Walmart:.95,RealAtlanticSuperstore:1.01,Costco:.90},
-  Walmart:{FreshCo:1.01,Sobeys:1.06,Walmart:1,RealAtlanticSuperstore:1.03,Costco:.92},
-  RealAtlanticSuperstore:{FreshCo:.98,Sobeys:1.02,Walmart:.97,RealAtlanticSuperstore:1,Costco:.89},
-  Costco:{FreshCo:1.08,Sobeys:1.12,Walmart:1.08,RealAtlanticSuperstore:1.1,Costco:1}
+  GreenLeaf:{GreenLeaf:1,HarbourFoods:1.07,BudgetBasket:.96,MegaGrocer:1.02,BulkClub:.91},
+  HarbourFoods:{GreenLeaf:.98,HarbourFoods:1,BudgetBasket:.95,MegaGrocer:1.01,BulkClub:.90},
+  BudgetBasket:{GreenLeaf:1.01,HarbourFoods:1.06,BudgetBasket:1,MegaGrocer:1.03,BulkClub:.92},
+  MegaGrocer:{GreenLeaf:.98,HarbourFoods:1.02,BudgetBasket:.97,MegaGrocer:1,BulkClub:.89},
+  BulkClub:{GreenLeaf:1.08,HarbourFoods:1.12,BudgetBasket:1.08,MegaGrocer:1.1,BulkClub:1}
 };
 const STORE_MAP_SEARCHES = {
-  FreshCo:"FreshCo grocery store",
-  Sobeys:"Sobeys grocery store",
-  Walmart:"Walmart grocery store",
-  RealAtlanticSuperstore:"Real Atlantic Superstore grocery store",
-  Costco:"Costco warehouse"
+  GreenLeaf:"grocery store",
+  HarbourFoods:"grocery store",
+  BudgetBasket:"grocery store",
+  MegaGrocer:"grocery store",
+  BulkClub:"grocery store"
 };
-const STORE_PRICE_FACTORS = {FreshCo:1,Sobeys:1.04,Walmart:.94,RealAtlanticSuperstore:1.02,Costco:.88};
+const STORE_PRICE_FACTORS = {GreenLeaf:1,HarbourFoods:1.04,BudgetBasket:.94,MegaGrocer:1.02,BulkClub:.88};
 const DEALS = {
-  FreshCo:["Chicken thighs: $5.99/kg, 25% off","Rice: 2 kg for $6.49","Canned beans: 3 for $4.00","Frozen vegetables: $3.49/bag","Eggs: $4.29/dozen"],
-  Sobeys:["Chicken thighs: $6.49/kg, 20% off","Tomatoes: $2.49/lb","Canned beans: 2 for $3.00","Fresh spinach: $3.99/bag","Pasta: $1.79/box"],
-  Walmart:["Chicken thighs: $5.79/kg, rollback","Rice: 2 kg for $5.97","Canned beans: $0.97 each","Mixed vegetables: $3.97/bag","Eggs: $4.17/dozen"],
-  RealAtlanticSuperstore:["Chicken thighs: $6.99/kg, PC Optimum offer","Rice: 2 kg for $6.99","Canned beans: 3 for $4.50","Frozen vegetables: $3.99/bag","Eggs: $4.49/dozen"],
-  Costco:["Chicken thighs: $18.99/2.5 kg pack","Rice: 8 kg for $19.99","Canned beans: 8-pack for $9.99","Frozen vegetables: $10.99/2 kg","Eggs: $14.99/24-pack"]
+  GreenLeaf:["Chicken thighs: $5.99/kg, 25% off","Rice: 2 kg for $6.49","Canned beans: 3 for $4.00","Frozen vegetables: $3.49/bag","Eggs: $4.29/dozen"],
+  HarbourFoods:["Chicken thighs: $6.49/kg, 20% off","Tomatoes: $2.49/lb","Canned beans: 2 for $3.00","Fresh spinach: $3.99/bag","Pasta: $1.79/box"],
+  BudgetBasket:["Chicken thighs: $5.79/kg, low price","Rice: 2 kg for $5.97","Canned beans: $0.97 each","Mixed vegetables: $3.97/bag","Eggs: $4.17/dozen"],
+  MegaGrocer:["Chicken thighs: $6.99/kg, Member offer","Rice: 2 kg for $6.99","Canned beans: 3 for $4.50","Frozen vegetables: $3.99/bag","Eggs: $4.49/dozen"],
+  BulkClub:["Chicken thighs: $18.99/2.5 kg pack","Rice: 8 kg for $19.99","Canned beans: 8-pack for $9.99","Frozen vegetables: $10.99/2 kg","Eggs: $14.99/24-pack"]
 };
 const PANTRY_ITEMS = ["Salt","Pepper","Oil","Flour","Sugar","Soy sauce","Garlic","Rice"];
 const SWAPS = [

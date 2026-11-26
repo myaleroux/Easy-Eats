@@ -9,7 +9,7 @@ Easy Eats is a plain HTML, CSS, and JavaScript recipe book for anyone who wants 
 - Two-week grocery planning for sample budgets and three sample Canadian stores
 - Combined grocery lists, pantry exclusions, store comparison, deals, and copy-to-clipboard
 - A dedicated My Pantry tab with common presets and custom items users can type and remove
-- FreshCo, Sobeys, Walmart, Real Atlantic Superstore, and Costco store options
+- GreenLeaf, HarbourFoods, BudgetBasket, MegaGrocer, and BulkClub store options
 - Nearby store search links using a city/postal code or the browser's location permission
 - Ingredient swap chat with more than 25 common substitutions and allergy notes
 - Six cooking lessons with a persistent skills tracker

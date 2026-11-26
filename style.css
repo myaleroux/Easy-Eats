@@ -1,7 +1,7 @@
 :root { --green:#2f6b45; --green-dark:#234f35; --green-light:#edf6ef; --tomato:#df5a45; --text:#233129; --muted:#667368; --border:#dde5dd; --cream:#fbfaf6; --shadow:0 10px 28px rgba(42,73,51,.10); --radius:18px; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { margin:0; font-family:"Nunito",system-ui,sans-serif; color:var(--text); background:var(--cream); line-height:1.55; }
+body { margin:0; font-family:system-ui,sans-serif; color:var(--text); background:var(--cream); line-height:1.55; }
 button,input,select { font:inherit; } button,a,select { cursor:pointer; } a { color:inherit; }
 :focus-visible { outline:3px solid #efb34d; outline-offset:3px; }
 .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); }
