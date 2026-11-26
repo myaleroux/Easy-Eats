@@ -12,7 +12,7 @@ Keep this up to date as you go — a few lines per work session is enough. It's 
 
 Copy this block for each session.
 
-### Session — November 17 — driver: Mya
+### Session — November 19 — driver: Mya
 
 - **Goal for this session:** Get all my general ideas out, see what the app looks like and fix any issues later.
 - **Key prompts we gave Copilot** (paste the important ones):
@@ -62,7 +62,7 @@ Copy this block for each session.
 
 - **Goal for this session:** Fix up grocery planner
 - **Key prompts we gave Copilot** (paste the important ones):
-  1. In the grocery planner, allow users to type in their own budget as they are only limited to options $100 and below. Ensure no code is deleted and only added.
+  1. In the grocery planner, allow users to type in their own budget, as they are only limited to options $100 and below. Ensure no code is deleted and only added.
 - **What worked:** Features were added.
 - **What broke, and how we fixed it:** No issues for this session
 - **Committed?** Yes, added a custom weekly budget field above $100 in the Grocery Planner.
@@ -104,7 +104,7 @@ What surprised me most was how well it understood and carried out what I asked. 
 
 2. Which parts were easy, and which were hard? Why do you think that is?
 
-I had expectations on both ends of the spectrum. At first, I thought it was gonna be easy, and for the most part it was. I knew my explanations had to be concise in order for it to work properly and thought I was in the clear when it came to my code being exactly as I wanted. Once I started adding more features, things got a little more complicated. One prompt I made completely changed my whole app, deleted things I was worried I wouldn't get back, and I was unsure how to fix it. The easy part is being able to gather ideas and have AI build it for you; the hard part is fixing it and tweaking it. I think that is because we internally know what needs to be fixed, but when relaying it to a non-human entity, it's never gonna understand to the full extent. It's scary having to tell an AI chat "delete everything you just did" as there's always a chance you lose something and can't get it back to the way it was. What finally worked was asking Copilot to disregard any changes related to "x" and give it the steps again. Which is odd, considering I didn't say anything really differently; it just worked that time around. I figured I would be able to get the app how I wanted fairly quickly; however, that was not at all the case.
+I had expectations on both ends of the spectrum. At first, I thought it was gonna be easy, and for the most part it was. I knew my explanations had to be concise in order for it to work properly and thought I was in the clear when it came to my code being exactly as I wanted. Once I started adding more features, things got a little more complicated. One prompt I made completely changed my whole app, deleted things I was worried I wouldn't be able to get back, and I was unsure how to fix it. The easy part is being able to gather ideas and have AI build it for you; one of the hard parts is fixing it and tweaking it. I think that is because we internally know what needs to be fixed, but when relaying it to a non-human entity, it's never gonna understand to the full extent. It's scary having to tell an AI chat "delete everything you just did" as there's always a chance you lose something and can't get it back to the way it was. What finally worked was asking Copilot to disregard any changes related to "x" and give it the steps again. Which is odd, considering I didn't say anything really differently; it just worked that time around. I figured I would be able to get the app how I wanted fairly quickly; however, that was not at all the case.
 
 3. If a competitor had the same AI tool, how long would it take them to copy your site?
 
