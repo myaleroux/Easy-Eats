@@ -5,7 +5,7 @@ The website is easy to copy, but every rating, swap review, and price report mak
 
 ## 1. The idea
 
-- **Customer:** Easy Eats is for students at StFX who want to eat well for less. Students who have difficulty planning healthy meals, where to shop, and shopping on a budget.
+- **Customer:** Easy Eats is for students at StFX who want to eat well for less. Students who have difficulty planning healthy meals, where to shop, and shopping on a budget. Easy Eats will start with a launch with StFX students first, then expand to groups like young adults, families, and people looking to cook once the community is established.
 - **Problem:** Finding recipes is not easy. They can be hard to follow, do not cater to your budget, and do not help you cook with what you already own. Planning a cheap week of meals means researching store deals and combining multiple recipes, which takes time and effort. Easy Eats does that for you.
 - **Solution:** Easy Eats puts recipes, budgets, deals, and cooking lessons in one place. A typical week set up looks like this:
     1. The user adjusts their profile according to household size, dietary needs, favourite stores, and what is in their pantry for that week.
