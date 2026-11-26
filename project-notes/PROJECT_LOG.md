@@ -21,7 +21,7 @@ Copy this block for each session.
   2. Show 9 sample recipes as cards (photo placeholder using an emoji, name, cook time, cost per serving in CAD, calories per serving, and tags like vegan, high-protein, halal).
 - **What worked:** Prompt made an initial version of the app well and followed every prompt correctly
 - **What broke, and how we fixed it:** "MyaFoodApp" was a placeholder name, and I forgot to remove it from the outline I gave Copilot. Changed November 19
-- **Committed?** Yes, c2a64d7 — “Initial commit”
+- **Committed?** Yes. The repo was created from the class template on Nov 19 (c2a64d7, "Initial commit"). My first version was saved in 756de99 on Nov 20
 
 ### Session — November 19 — driver: Mya
 
@@ -34,7 +34,7 @@ Copy this block for each session.
   3. I also don't want it to be solely targeted at students; Easy Eats, Easy Saving instead of Smart Meals for student life
 - **What worked:** Costco and Real Atlantic Superstore now appear in the dropdown menu. Map option works: Users select a store name and it opens an external Google Maps link showing where the store is according to their location.
 - **What broke, and how we fixed it:** No issues logged in this section.
-- **Committed?** Yes. The repo was created from the class template on Nov 19 (c2a64d7, "Initial commit"). My first version was saved in 756de99 on Nov 20.
+- **Committed?** Yes, in 756de99, "Add recipe planning and kitchen features" (Nov 20), along with the Nov 20 changes.
 
 ### Session — November 20 — driver: Mya
 
@@ -91,7 +91,7 @@ Copy this block for each session.
 
 | Date | What went wrong | What we tried | What finally fixed it |
 |---|---|---|---|
-| November 17 | The app used my placeholder name, "MyaFoodApp"| Asked Copilot to change it from "MyaFoodApp" to "Easy Eats" | Worked on Nov 19 |
+| November 19| The app used my placeholder name, "MyaFoodApp"| Asked Copilot to change it from "MyaFoodApp" to "Easy Eats" | Worked on Nov 19 |
 | November 20 | Adding "Plan your week" only prompted a "Clear Week" button to appear, making it so you had to click that for the dropdown to appear. | Asked Copilot to keep the Clear Week button but add a button to open that dropdown menu, making it easier to understand. | Asked Copilot to remove any commits related to plan out your week and redo it. |
 | November 21 | Tried adding a price reporting feature to aid network effects, and weekly recipes all disappeared. | Prompted: Weekly recipes are still gone from the tab. Add the list of weekly recipes to add to the weekly planner back into the tab | Asked Copilot to revert the app to how it was before the sample community data prompt and followed with each prompt individually, ensuring each worked before moving on to the next. Insisted that all previous code remains the same, to only add, not delete/change anything |
 | November 26 | Ran out of Codespaces hours with unpushed work still in the codespace | Tried to open the codespace, but it was blocked | Exported the changes to a branch, then made the remaining edits in github.dev on main |
