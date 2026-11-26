@@ -34,7 +34,7 @@ Copy this block for each session.
   3. I also don't want it to be solely targeted at students; Easy Eats, Easy Saving instead of Smart Meals for student life
 - **What worked:** Costco and Real Atlantic Superstore now appear in the dropdown menu. Map option works: Users select a store name and it opens an external Google Maps link showing where the store is according to their location.
 - **What broke, and how we fixed it:** No issues logged in this section.
-- **Committed?** Yes, 2132e8f — “Agent host session d6c3ab6c-efc2-4af6-8fa1-aaa7b0c668b4 - turn 2” (app name, pantry, and store updates)
+- **Committed?** Yes. The repo was created from the class template on Nov 19 (c2a64d7, "Initial commit"). My first version was saved in 756de99 on Nov 20.
 
 ### Session — November 20 — driver: Mya
 
@@ -45,7 +45,7 @@ Copy this block for each session.
   3. Add a feature where users can pick from breakfast recipes, lunch recipes, and dinner recipes for the week. Once they find and select recipes they like, they're all added together in their grocery list for the week.
 - **What worked:** Recipes are now much more concise and easier to follow for beginners. Saved recipes, common tools, and my kitchen tab are now available. Meals are now individually swappable and swappable per week. Switching between metric and imperial is now available and changes accordingly for each recipe
 - **What broke, and how we fixed it:** When adding "Plan your week," only a "clear week" button was there, and you had to click it for the drop-down to appear, which can be misleading and confusing to users. Fixed it with lots of trial and error; eventually, I had to remove any previous commits related to that prompt and redo it.
-- **Committed?** Yes, 756de99 — “Add recipe planning and kitchen features”
+- **Committed?** Yes, 756de99 "Add recipe planning and kitchen features", then the Plan your week fix: bd16666 (first try), 594076a (revert), a54e98f "Redo weekly meal planning with working recipe buttons"
 
 ### Session — November 21 — driver: Mya
 
@@ -56,7 +56,7 @@ Copy this block for each session.
   3. In the Grocery Planner, add a “Report a price” button next to each deal that opens a small form (item, price, store) and shows “Thanks! Your report helps 1,240 shoppers in Antigonish.”
 - **What worked:** Features were added.
 - **What broke, and how we fixed it:** All the  weekly recipe cards disappeared, yet all other features remained the same. After lots of "add the recipe cards back," I eventually had to ask Copilot to revert the app to how it was before the sample community data prompt. Afterwards, I gave Copilot a step-by-step, ensuring each individual feature was working before giving a new one. Ensured to note the importance not to delete any existing code and to just add.
-- **Committed?** Yes, d251f74 — “Add community data and refresh project documentation”
+- **Committed?** Yes, d251f74 — "Add community data and refresh project documentation" (pushed Nov 22)
 
 ### Session — November 24 — driver: Mya
 
@@ -65,11 +65,26 @@ Copy this block for each session.
   1. In the grocery planner, allow users to type in their own budget, as they are only limited to options $100 and below. Ensure no code is deleted and only added.
 - **What worked:** Features were added.
 - **What broke, and how we fixed it:** No issues for this session
-- **Committed?** Yes, added a custom weekly budget field above $100 in the Grocery Planner.
+- **Committed?** Yes, 01e8b3c "Allow custom grocery budgets": added a custom weekly budget field above $100 in the Grocery Planner.
 - Supports decimal values
 - Recalculates the plan when entered
 - Preserves the existing preset budget options
 - Validation for budgets greater than $0
+
+### Session — November 26 — driver: Mya
+
+- **Goal for this session:** Check my project against the grading rubric and fix anything that would lose marks before submitting.
+- **Key prompts we gave Copilot** (paste the important ones):
+  1. No Copilot prompts this session. I ran out of Codespaces hours, so I made the changes by hand in github.dev. I used Claude to review my site and documents against the rubric and to walk me through the edits.
+- **What worked:**
+  - Replaced the real grocery store names (FreshCo, Sobeys, Walmart, Real Atlantic Superstore, Costco) with made-up ones (GreenLeaf, HarbourFoods, BudgetBasket, MegaGrocer, BulkClub), since the rubric doesn't allow real brand names.
+  - Removed the Google Fonts link so the site runs with nothing external.
+  - Changed the footer to say it's a student prototype.
+  - Update the AI-use line in the business case.
+- **What broke, and how we fixed it:**
+  - Codespaces said I was out of free hours, and my codespace had 2 commits and some changes that were never pushed. I used "Export changes to a branch" to save them, then copied the edits I still needed into main.
+  - When renaming stores, "Mega Grocer" with a space broke the code where it was used as a name in data.js. I changed it to "MegaGrocer" before committing.
+- **Committed?** Yes: bc1f668 "Fix project log dates", fa475ed "Update AI use section for clarity", a2ae25e "Replace real store names, remove gooogle fonts, add student footer"
 ---
 
 ## Things that broke (running list)
@@ -79,6 +94,7 @@ Copy this block for each session.
 | November 17 | The app used my placeholder name, "MyaFoodApp"| Asked Copilot to change it from "MyaFoodApp" to "Easy Eats" | Worked on Nov 19 |
 | November 20 | Adding "Plan your week" only prompted a "Clear Week" button to appear, making it so you had to click that for the dropdown to appear. | Asked Copilot to keep the Clear Week button but add a button to open that dropdown menu, making it easier to understand. | Asked Copilot to remove any commits related to plan out your week and redo it. |
 | November 21 | Tried adding a price reporting feature to aid network effects, and weekly recipes all disappeared. | Prompted: Weekly recipes are still gone from the tab. Add the list of weekly recipes to add to the weekly planner back into the tab | Asked Copilot to revert the app to how it was before the sample community data prompt and followed with each prompt individually, ensuring each worked before moving on to the next. Insisted that all previous code remains the same, to only add, not delete/change anything |
+| November 26 | Ran out of Codespaces hours with unpushed work still in the codespace | Tried to open the codespace, but it was blocked | Exported the changes to a branch, then made the remaining edits in github.dev on main |
 ## What a real version would need
 
 Everything we wanted but faked or left out — real logins, a real database, payments, security, moderation, an app, staff, etc. For each one, say **why** it's needed and roughly **how hard or expensive** you think it would be.
@@ -95,6 +111,7 @@ Everything we wanted but faked or left out — real logins, a real database, pay
 | Recipe and allergy safety review | Bad swaps, steps, or nonsensical recipes could cause allergic reactions or undercooked food | Medium: a part-time nutrition or food-safety reviewer/staff member |
 | Customer support | Users need help with accounts, billing, and bugs | Low to medium: support tools plus staff |
 | Premium accounts | In order to make a profit, users who want to access premium meals will need a premium account. For the sake of the prototype, all recipes are available regardless of premium indication | Low: Once billing software is installed, code needs to be tweaked to account for premium accounts being launched |
+| Real grocery stores | The prototype uses made-up store names (GreenLeaf, HarbourFoods, etc.) because I can't use real brands without permission. A real version needs actual local stores so users can compare prices and shop where they live, and using a store's name, logo, or deals would need permission or a partnership | Hard: stores have to agree to be listed or share data, which is easier once there are enough local users to offer them |
 
 ## Reflection (fill in at the end)
 
