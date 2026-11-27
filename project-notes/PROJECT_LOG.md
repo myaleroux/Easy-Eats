@@ -97,8 +97,6 @@ Keep this up to date as you go — a few lines per work session is enough. It's 
 | November 26 | Ran out of Codespaces hours with unpushed work still in the codespace | Tried to open the codespace, but it was blocked | Exported the changes to a branch, then made the remaining edits in github.dev on main |
 ## What a real version would need
 
-Everything we wanted but faked or left out — real logins, a real database, payments, security, moderation, an app, staff, etc. For each one, say **why** it's needed and roughly **how hard or expensive** you think it would be.
-
 | Feature we faked or skipped | Why a real company would need it | How hard/expensive? |
 |---|---|---|
 | Cloud backend | The prototype is hosted on GitHub Pages, but user data is only saved in browser local storage. A real service needs a shared backend for accounts, synced data, and community features | Medium: a managed backend and hosted database |
