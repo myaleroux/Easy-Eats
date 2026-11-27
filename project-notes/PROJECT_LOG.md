@@ -3,14 +3,14 @@
 Keep this up to date as you go — a few lines per work session is enough. It's much harder to reconstruct at the end.
 
 **Team name:** Mya Leroux
+
 **Startup name:** Easy Eats
+
 **Live site link:** https://myaleroux.github.io/Easy-Eats/
 
 ---
 
 ## Work sessions
-
-Copy this block for each session.
 
 ### Session — November 19 — driver: Mya
 
@@ -80,11 +80,11 @@ Copy this block for each session.
   - Replaced the real grocery store names (FreshCo, Sobeys, Walmart, Real Atlantic Superstore, Costco) with made-up ones (GreenLeaf, HarbourFoods, BudgetBasket, MegaGrocer, BulkClub), since the rubric doesn't allow real brand names.
   - Removed the Google Fonts link so the site runs with nothing external.
   - Changed the footer to say it's a student prototype.
-  - Update the AI-use line in the business case.
+  - Updated the AI-use line in the business case.
 - **What broke, and how we fixed it:**
   - Codespaces said I was out of free hours, and my codespace had 2 commits and some changes that were never pushed. I used "Export changes to a branch" to save them, then copied the edits I still needed into main.
   - When renaming stores, "Mega Grocer" with a space broke the code where it was used as a name in data.js. I changed it to "MegaGrocer" before committing.
-- **Committed?** Yes: bc1f668 "Fix project log dates", fa475ed "Update AI use section for clarity", a2ae25e "Replace real store names, remove gooogle fonts, add student footer"
+- **Committed?** Yes: bc1f668 "Fix project log dates", fa475ed "Update AI use section for clarity", a2ae25e "Replace real store names, remove Google fonts, add student footer"
 ---
 
 ## Things that broke (running list)
