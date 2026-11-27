@@ -1,7 +1,5 @@
 # Project log
 
-Keep this up to date as you go — a few lines per work session is enough. It's much harder to reconstruct at the end.
-
 **Team name:** Mya Leroux
 
 **Startup name:** Easy Eats
@@ -82,7 +80,7 @@ Keep this up to date as you go — a few lines per work session is enough. It's 
   - Changed the footer to say it's a student prototype.
   - Updated the AI-use line in the business case.
 - **What broke, and how we fixed it:**
-  - Codespaces said I was out of free hours, and my codespace had 2 commits and some changes that were never pushed. I used "Export changes to a branch" to save them, then copied the edits I still needed into main.
+  - Codespaces said I was out of free hours, and my Codespace had 2 commits and some changes that were never pushed. I used "Export changes to a branch" to save them, then copied the edits I still needed into main.
   - When renaming stores, "Mega Grocer" with a space broke the code where it was used as a name in data.js. I changed it to "MegaGrocer" before committing.
 - **Committed?** Yes: bc1f668 "Fix project log dates", fa475ed "Update AI use section for clarity", a2ae25e "Replace real store names, remove Google fonts, add student footer"
 ---
@@ -119,7 +117,7 @@ What surprised me most was how well it understood and carried out what I asked. 
 
 2. Which parts were easy, and which were hard? Why do you think that is?
 
-I had expectations on both ends of the spectrum. At first, I thought it was gonna be easy, and for the most part it was. I knew my explanations had to be concise in order for it to work properly and thought I was in the clear when it came to my code being exactly as I wanted. Once I started adding more features, things got a little more complicated. One prompt I made completely changed my whole app, deleted things I was worried I wouldn't be able to get back, and I was unsure how to fix it. The easy part is being able to gather ideas and have AI build it for you; one of the hard parts is fixing it and tweaking it. I think that is because we internally know what needs to be fixed, but when relaying it to a non-human entity, it's never gonna understand to the full extent. It's scary having to tell an AI chat "delete everything you just did" as there's always a chance you lose something and can't get it back to the way it was. What finally worked was asking Copilot to disregard any changes related to "x" and give it the steps again. Which is odd, considering I didn't say anything really differently; it just worked that time around. I figured I would be able to get the app how I wanted fairly quickly; however, that was not at all the case.
+I had expectations on both ends of the spectrum. At first, I thought it was going to be easy, and for the most part it was. I knew my explanations had to be concise in order for it to work properly and thought I was in the clear when it came to my code being exactly as I wanted. Once I started adding more features, things got a little more complicated. One prompt I made completely changed my whole app, deleted things I was worried I wouldn't be able to get back, and I was unsure how to fix it. The easy part is being able to gather ideas and have AI build it for you; one of the hard parts is fixing it and tweaking it. I think that is because we internally know what needs to be fixed, but when relaying it to a non-human entity, it's never going to understand it to the full extent. It's scary having to tell an AI chat "delete everything you just did" as there's always a chance you lose something and can't get it back to the way it was. What finally worked was asking Copilot to disregard any changes related to "x" and give it the steps again. I found this odd, considering I didn't say anything really different; it just worked that time around. I figured I would be able to get the app how I wanted fairly quickly; however, that was not at all the case.
 
 3. If a competitor had the same AI tool, how long would it take them to copy your site?
 
